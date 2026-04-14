@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import type { Dictionary } from '../dictionaries'
 
-const IMG_1 = '/images/gallery-1.avif'
-const IMG_2 = '/images/gallery-2.avif'
-const IMG_3 = '/images/gallery-3.avif'
-const MOBILE_IMG_1 = '/images/mobile-gallery-1.avif'
+const IMG_1 = '/images/gallery-1.jpg'
+const IMG_2 = '/images/gallery-2.jpg'
+const IMG_3 = '/images/gallery-3.jpg'
+const MOBILE_IMG_1 = '/images/mobile-gallery-1.jpg'
 const ARROW_ICON = '/icons/arrow-icon.svg'
 
 export default function Gallery({ dict }: { dict: Dictionary }) {

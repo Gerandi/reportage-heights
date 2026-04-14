@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import type { Dictionary } from '../dictionaries'
 
-const EXPERIENCE_BG = '/images/experience-bg.avif'
-const MOBILE_EXPERIENCE_BG = '/images/mobile-experience-bg.avif'
-const IMG_1BED = '/images/exp-1bed.avif'
-const IMG_STUDIO = '/images/exp-studio.avif'
-const MOBILE_IMG_1BED = '/images/mobile-exp-1bed.avif'
-const MOBILE_IMG_STUDIO = '/images/mobile-exp-studio.avif'
+const EXPERIENCE_BG = '/images/experience-bg.jpg'
+const MOBILE_EXPERIENCE_BG = '/images/mobile-experience-bg.jpg'
+const IMG_1BED = '/images/exp-1bed.jpg'
+const IMG_STUDIO = '/images/exp-studio.jpg'
+const MOBILE_IMG_1BED = '/images/mobile-exp-1bed.jpg'
+const MOBILE_IMG_STUDIO = '/images/mobile-exp-studio.jpg'
 const PLAY_ICON = '/icons/play-icon.svg'
 const MOBILE_ARROW_ICON = '/icons/mobile-arrow-icon.svg'
 

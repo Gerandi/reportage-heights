@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import type { Dictionary } from '../dictionaries'
 
-const IMG_1 = '/images/amenities-1.avif'
-const IMG_2 = '/images/amenities-2.avif'
-const MOBILE_IMG = '/images/mobile-amenities.avif'
+const IMG_1 = '/images/amenities-1.jpg'
+const IMG_2 = '/images/amenities-2.jpg'
+const MOBILE_IMG = '/images/mobile-amenities.jpg'
 const ICON_POOL = '/icons/icon-pool.svg'
 const ICON_FITNESS = '/icons/icon-fitness.svg'
 const ICON_PARKING = '/icons/icon-parking.svg'

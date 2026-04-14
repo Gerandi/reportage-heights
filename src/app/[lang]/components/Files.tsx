@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import type { Dictionary } from '../dictionaries'
 
-const FILES_BG = '/images/files-bg.avif'
-const MOBILE_FILES_BG = '/images/mobile-files-bg.avif'
+const FILES_BG = '/images/files-bg.jpg'
+const MOBILE_FILES_BG = '/images/mobile-files-bg.jpg'
 const FILE_ICON = '/icons/files-file-icon.svg'
 const MOBILE_FILE_ICON = '/icons/mobile-files-file-icon.svg'
 const DOWNLOAD_ICON_1 = '/icons/files-download-1.svg'

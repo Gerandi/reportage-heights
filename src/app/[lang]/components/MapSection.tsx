@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import type { Dictionary } from '../dictionaries'
 
-const MAP_IMG = '/images/map.avif'
-const MOBILE_MAP_IMG = '/images/mobile-map.avif'
+const MAP_IMG = '/images/map.jpg'
+const MOBILE_MAP_IMG = '/images/mobile-map.jpg'
 
 export default function MapSection({ dict }: { dict: Dictionary }) {
   const t = dict.map
