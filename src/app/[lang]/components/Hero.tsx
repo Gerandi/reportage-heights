@@ -5,7 +5,7 @@ import LanguageDropdown from './LanguageDropdown'
 
 // Desktop assets
 const LOGO = '/icons/logo.svg'
-const HERO_BG = '/images/hero-bg.avif'
+const HERO_BG = '/images/hero-bg.jpg'
 const PHONE_ICON = '/icons/phone-icon.svg'
 const LANG_ICON = '/icons/lang-icon.svg'
 const LANG_CHEVRON = '/icons/lang-chevron.svg'
@@ -14,7 +14,7 @@ const DOWNLOAD_ICON = '/icons/download-icon.svg'
 
 // Mobile assets (from Figma mobile frame)
 const MOBILE_LOGO = '/icons/mobile-logo.svg'
-const MOBILE_HERO_BG = '/images/mobile-hero-bg.avif'
+const MOBILE_HERO_BG = '/images/mobile-hero-bg.jpg'
 const MOBILE_LANG_ICON = '/icons/mobile-lang-icon.svg'
 const MOBILE_LANG_CHEVRON = '/icons/mobile-lang-chevron.svg'
 const MOBILE_FILE_ICON = '/icons/mobile-file-icon.svg'

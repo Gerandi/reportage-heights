@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import type { Dictionary } from '../dictionaries'
 
-const VISION_IMG = '/images/vision.avif'
-const MOBILE_VISION_IMG = '/images/mobile-vision.avif'
+const VISION_IMG = '/images/vision.jpg'
+const MOBILE_VISION_IMG = '/images/mobile-vision.jpg'
 const CHECK_ICON = '/icons/check-icon.svg'
 const PLAY_ICON = '/icons/vision-play-icon.svg'
 
