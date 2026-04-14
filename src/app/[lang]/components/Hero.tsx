@@ -122,8 +122,7 @@ export default function Hero({ dict, lang }: { dict: Dictionary; lang: string })
             <Link href="#vision" className="font-sans font-medium text-[14px] text-black tracking-[1.4px] uppercase">{t.vision}</Link>
             <Link href="#experience" className="font-sans font-medium text-[14px] text-black tracking-[1.4px] uppercase">{t.virtualTour}</Link>
             <Link href="#files" className="font-sans font-medium text-[14px] text-black tracking-[1.4px] uppercase">{t.downloads}</Link>
-            <div className="flex items-center gap-[10px] bg-[#e6b867] px-[24px] py-[12px] rounded-[4px]">
-              <img alt="" src={PHONE_ICON} className="size-[18px]" />
+            <div className="flex items-center bg-[#e6b867] px-[24px] py-[12px] rounded-[4px]">
               <span className="font-sans font-bold text-[14px] text-white">{t.phone}</span>
             </div>
             <LanguageDropdown
