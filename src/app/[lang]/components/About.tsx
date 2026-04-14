@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import type { Dictionary } from '../dictionaries'
 
-const REPORTAGE_LOGO = 'https://www.figma.com/api/mcp/asset/4df335b9-9f6b-455b-889a-8da26cf6f5c8'
-const MOBILE_REPORTAGE_LOGO = 'https://www.figma.com/api/mcp/asset/fad3cebb-5b4b-4945-a445-09145bc64c20'
+const REPORTAGE_LOGO = '/icons/reportage-logo.png'
+const MOBILE_REPORTAGE_LOGO = '/icons/mobile-reportage-logo.png'
 
 export default function About({ dict }: { dict: Dictionary }) {
   const t = dict.about

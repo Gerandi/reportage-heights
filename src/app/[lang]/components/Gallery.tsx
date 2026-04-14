@@ -5,7 +5,7 @@ const IMG_1 = '/images/gallery-1.avif'
 const IMG_2 = '/images/gallery-2.avif'
 const IMG_3 = '/images/gallery-3.avif'
 const MOBILE_IMG_1 = '/images/mobile-gallery-1.avif'
-const ARROW_ICON = 'https://www.figma.com/api/mcp/asset/ab0e9e72-1959-4189-bc85-ea9e42f97dee'
+const ARROW_ICON = '/icons/arrow-icon.svg'
 
 export default function Gallery({ dict }: { dict: Dictionary }) {
   const t = dict.gallery

@@ -4,22 +4,22 @@ import type { Dictionary } from '../dictionaries'
 import LanguageDropdown from './LanguageDropdown'
 
 // Desktop assets
-const LOGO = 'https://www.figma.com/api/mcp/asset/e8026201-3535-4401-a83f-4b1587ff912a'
+const LOGO = '/icons/logo.svg'
 const HERO_BG = '/images/hero-bg.avif'
-const PHONE_ICON = 'https://www.figma.com/api/mcp/asset/e3fbd0c7-89cf-4b2c-9ac3-e013ac95341c'
-const LANG_ICON = 'https://www.figma.com/api/mcp/asset/c12d9601-2296-4e38-843f-7f23b98475cc'
-const LANG_CHEVRON = 'https://www.figma.com/api/mcp/asset/c2de3ac4-95ae-4be2-b353-3ebca7247f83'
-const FILE_ICON = 'https://www.figma.com/api/mcp/asset/25206d86-2658-410c-9212-970dafe07716'
-const DOWNLOAD_ICON = 'https://www.figma.com/api/mcp/asset/cae738d8-568c-4e0a-a752-07b1a0839e2b'
+const PHONE_ICON = '/icons/phone-icon.svg'
+const LANG_ICON = '/icons/lang-icon.svg'
+const LANG_CHEVRON = '/icons/lang-chevron.svg'
+const FILE_ICON = '/icons/file-icon.svg'
+const DOWNLOAD_ICON = '/icons/download-icon.svg'
 
 // Mobile assets (from Figma mobile frame)
-const MOBILE_LOGO = 'https://www.figma.com/api/mcp/asset/312220b2-31f2-4e29-9804-7548ee757e1b'
+const MOBILE_LOGO = '/icons/mobile-logo.svg'
 const MOBILE_HERO_BG = '/images/mobile-hero-bg.avif'
-const MOBILE_LANG_ICON = 'https://www.figma.com/api/mcp/asset/527b8c59-5933-4d95-b148-3bacf5640249'
-const MOBILE_LANG_CHEVRON = 'https://www.figma.com/api/mcp/asset/2292e743-bbb8-422e-bbd9-57c086fca736'
-const MOBILE_FILE_ICON = 'https://www.figma.com/api/mcp/asset/bfec914a-de2d-4498-992b-14a77d2179e0'
-const MOBILE_DOWNLOAD_ICON_1 = 'https://www.figma.com/api/mcp/asset/71b172c3-4a53-423b-84b4-052f59865e07'
-const MOBILE_DOWNLOAD_ICON_2 = 'https://www.figma.com/api/mcp/asset/4b2a7b51-8e32-467a-ae0d-8aa23bba1951'
+const MOBILE_LANG_ICON = '/icons/mobile-lang-icon.svg'
+const MOBILE_LANG_CHEVRON = '/icons/mobile-lang-chevron.svg'
+const MOBILE_FILE_ICON = '/icons/mobile-file-icon.svg'
+const MOBILE_DOWNLOAD_ICON_1 = '/icons/mobile-download-icon-1.svg'
+const MOBILE_DOWNLOAD_ICON_2 = '/icons/mobile-download-icon-2.svg'
 
 export default function Hero({ dict, lang }: { dict: Dictionary; lang: string }) {
   const t = dict.nav

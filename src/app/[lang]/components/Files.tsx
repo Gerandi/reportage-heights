@@ -3,11 +3,11 @@ import type { Dictionary } from '../dictionaries'
 
 const FILES_BG = '/images/files-bg.avif'
 const MOBILE_FILES_BG = '/images/mobile-files-bg.avif'
-const FILE_ICON = 'https://www.figma.com/api/mcp/asset/d505ccc1-c920-4e40-a653-ff08a9f218c2'
-const MOBILE_FILE_ICON = 'https://www.figma.com/api/mcp/asset/fee70fa1-7c1e-4d36-a162-251a4cc868e5'
-const DOWNLOAD_ICON_1 = 'https://www.figma.com/api/mcp/asset/085d3a75-c324-4543-a19e-175d7c6364e1'
-const DOWNLOAD_ICON_2 = 'https://www.figma.com/api/mcp/asset/3252a9b5-0166-4635-8a3b-b33dd48b9883'
-const MOBILE_DOWNLOAD_ICON = 'https://www.figma.com/api/mcp/asset/1a825cc6-89b0-44f3-947e-0c5a3a4f1eb9'
+const FILE_ICON = '/icons/files-file-icon.svg'
+const MOBILE_FILE_ICON = '/icons/mobile-files-file-icon.svg'
+const DOWNLOAD_ICON_1 = '/icons/files-download-1.svg'
+const DOWNLOAD_ICON_2 = '/icons/files-download-2.svg'
+const MOBILE_DOWNLOAD_ICON = '/icons/mobile-files-download.svg'
 
 export default function Files({ dict }: { dict: Dictionary }) {
   const t = dict.files

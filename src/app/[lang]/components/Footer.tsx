@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Dictionary } from '../dictionaries'
 
-const LOGO = 'https://www.figma.com/api/mcp/asset/a7949095-45a1-4a11-846c-5a113520498d'
-const MOBILE_LOGO = 'https://www.figma.com/api/mcp/asset/90394829-8b6f-44b1-90dd-d9d55f0f48b1'
+const LOGO = '/icons/footer-logo.svg'
+const MOBILE_LOGO = '/icons/footer-mobile-logo.svg'
 
 export default function Footer({ dict, lang }: { dict: Dictionary; lang: string }) {
   const t = dict.footer

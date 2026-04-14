@@ -58,8 +58,6 @@ export default async function LangLayout({
         {/* Preload LCP hero images — desktop gets full bg, mobile gets mobile bg */}
         <link rel="preload" as="image" href="/images/hero-bg.avif" media="(min-width: 1024px)" />
         <link rel="preload" as="image" href="/images/mobile-hero-bg.avif" media="(max-width: 1023px)" />
-        <link rel="preconnect" href="https://www.figma.com" />
-        <link rel="dns-prefetch" href="https://www.figma.com" />
       </head>
       <body className="min-h-screen antialiased">{children}</body>
     </html>

@@ -1,7 +1,7 @@
 import type { Dictionary } from '../dictionaries'
 
-const CHEVRON_ICON = 'https://www.figma.com/api/mcp/asset/5ea17fba-fbd3-470f-8c19-cd7d3fc2d1b6'
-const MOBILE_CHEVRON_ICON = 'https://www.figma.com/api/mcp/asset/5213ce8d-d5ff-4aca-a2dd-154ecb71af06'
+const CHEVRON_ICON = '/icons/chevron-icon.svg'
+const MOBILE_CHEVRON_ICON = '/icons/mobile-chevron-icon.svg'
 
 export default function FormSection({ dict }: { dict: Dictionary }) {
   const t = dict.form

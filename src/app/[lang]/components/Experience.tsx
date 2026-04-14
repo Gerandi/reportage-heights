@@ -7,8 +7,8 @@ const IMG_1BED = '/images/exp-1bed.avif'
 const IMG_STUDIO = '/images/exp-studio.avif'
 const MOBILE_IMG_1BED = '/images/mobile-exp-1bed.avif'
 const MOBILE_IMG_STUDIO = '/images/mobile-exp-studio.avif'
-const PLAY_ICON = 'https://www.figma.com/api/mcp/asset/976fe57a-c3b2-4f98-9ae2-c75757825c03'
-const MOBILE_ARROW_ICON = 'https://www.figma.com/api/mcp/asset/67a4c724-a6db-4cd0-856f-90b06c70e8c9'
+const PLAY_ICON = '/icons/play-icon.svg'
+const MOBILE_ARROW_ICON = '/icons/mobile-arrow-icon.svg'
 
 export default function Experience({ dict }: { dict: Dictionary }) {
   const t = dict.experience

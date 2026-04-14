@@ -3,8 +3,8 @@ import type { Dictionary } from '../dictionaries'
 
 const VISION_IMG = '/images/vision.avif'
 const MOBILE_VISION_IMG = '/images/mobile-vision.avif'
-const CHECK_ICON = 'https://www.figma.com/api/mcp/asset/6bb23649-98dd-4de1-b284-16e70faeb86f'
-const PLAY_ICON = 'https://www.figma.com/api/mcp/asset/e740c243-c60a-43d1-afb6-049453bf6eb5'
+const CHECK_ICON = '/icons/check-icon.svg'
+const PLAY_ICON = '/icons/vision-play-icon.svg'
 
 export default function Vision({ dict }: { dict: Dictionary }) {
   const t = dict.vision
