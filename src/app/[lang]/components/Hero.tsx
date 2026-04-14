@@ -1,0 +1,215 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import type { Dictionary } from '../dictionaries'
+import LanguageDropdown from './LanguageDropdown'
+
+// Desktop assets
+const LOGO = 'https://www.figma.com/api/mcp/asset/e8026201-3535-4401-a83f-4b1587ff912a'
+const HERO_BG = '/images/hero-bg.avif'
+const PHONE_ICON = 'https://www.figma.com/api/mcp/asset/e3fbd0c7-89cf-4b2c-9ac3-e013ac95341c'
+const LANG_ICON = 'https://www.figma.com/api/mcp/asset/c12d9601-2296-4e38-843f-7f23b98475cc'
+const LANG_CHEVRON = 'https://www.figma.com/api/mcp/asset/c2de3ac4-95ae-4be2-b353-3ebca7247f83'
+const FILE_ICON = 'https://www.figma.com/api/mcp/asset/25206d86-2658-410c-9212-970dafe07716'
+const DOWNLOAD_ICON = 'https://www.figma.com/api/mcp/asset/cae738d8-568c-4e0a-a752-07b1a0839e2b'
+
+// Mobile assets (from Figma mobile frame)
+const MOBILE_LOGO = 'https://www.figma.com/api/mcp/asset/312220b2-31f2-4e29-9804-7548ee757e1b'
+const MOBILE_HERO_BG = '/images/mobile-hero-bg.avif'
+const MOBILE_LANG_ICON = 'https://www.figma.com/api/mcp/asset/527b8c59-5933-4d95-b148-3bacf5640249'
+const MOBILE_LANG_CHEVRON = 'https://www.figma.com/api/mcp/asset/2292e743-bbb8-422e-bbd9-57c086fca736'
+const MOBILE_FILE_ICON = 'https://www.figma.com/api/mcp/asset/bfec914a-de2d-4498-992b-14a77d2179e0'
+const MOBILE_DOWNLOAD_ICON_1 = 'https://www.figma.com/api/mcp/asset/71b172c3-4a53-423b-84b4-052f59865e07'
+const MOBILE_DOWNLOAD_ICON_2 = 'https://www.figma.com/api/mcp/asset/4b2a7b51-8e32-467a-ae0d-8aa23bba1951'
+
+export default function Hero({ dict, lang }: { dict: Dictionary; lang: string }) {
+  const t = dict.nav
+  const h = dict.hero
+  const f = dict.heroForm
+
+  return (
+    <section className="relative w-full bg-[#425263]">
+      {/* ── MOBILE HERO (< lg) ── */}
+      <div className="lg:hidden relative h-[844px] flex flex-col overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            alt=""
+            src={MOBILE_HERO_BG}
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(17,17,17,0.4)] to-[#111]" />
+        </div>
+
+        {/* Mobile Navbar */}
+        <div className="relative z-50 flex items-center justify-between px-[20px] py-[40px] h-[105px]">
+          <Image alt="Reportage Heights" src={MOBILE_LOGO} width={132} height={26} className="object-contain" priority />
+          <LanguageDropdown
+            lang={lang}
+            currentLabel={t.lang}
+            variant="mobile"
+            langIcon={MOBILE_LANG_ICON}
+            chevronIcon={MOBILE_LANG_CHEVRON}
+          />
+        </div>
+
+        {/* Mobile Hero Content */}
+        <div className="relative z-10 flex flex-col flex-1 justify-end px-[20px] pb-[60px] gap-[12px]">
+          {/* Badge + Title + Subtitle */}
+          <div className="flex flex-col gap-[16px] w-[350px]">
+            <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] flex items-center justify-center px-[16px] py-[10px] rounded-[8px] self-start">
+              <span className="font-sans font-bold text-[12px] text-[#e6b867] tracking-[4.8px] uppercase">{h.tagline}</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif text-white text-[40px] leading-[48px]">{h.titleLine1}</span>
+              <span className="font-serif text-white text-[40px] leading-[48px]">{h.titleLine2}</span>
+            </div>
+          </div>
+          <div className="w-[350px]">
+            <p className="font-sans font-light text-[16px] text-[#d8d2c4] leading-[20px]">{h.subtitle}</p>
+          </div>
+
+          {/* Download cards */}
+          <div className="flex flex-col gap-[17px] pt-[16px] w-[350px]">
+            {[
+              { label: h.brochure, icon: MOBILE_DOWNLOAD_ICON_1 },
+              { label: h.floorPlans, icon: MOBILE_DOWNLOAD_ICON_2 },
+            ].map((card) => (
+              <div
+                key={card.label}
+                className="flex gap-[32px] items-center p-[13px] bg-[rgba(66,82,99,0.7)] border border-[rgba(216,210,196,0.15)] rounded-[12px] w-full cursor-pointer"
+              >
+                <div className="bg-[rgba(255,255,255,0.1)] rounded-[8px] size-[80px] flex items-center justify-center shrink-0">
+                  <Image alt="" src={MOBILE_FILE_ICON} width={40} height={40} />
+                </div>
+                <div className="flex flex-col gap-[8px] flex-1">
+                  <span className="font-serif text-white text-[20px] leading-[24px]">{card.label}</span>
+                  <div className="flex items-center gap-[8px]">
+                    <img alt="" src={card.icon} className="size-[16px]" />
+                    <span className="font-sans font-semibold text-[13px] text-[#e6b867] tracking-[1.3px] uppercase">{h.downloadPdf}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── DESKTOP HERO (>= lg) ── */}
+      <div className="hidden lg:block">
+        {/* Background image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            alt=""
+            src={HERO_BG}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ backgroundImage: 'linear-gradient(134.77deg, rgba(0,0,0,0.3) 12.83%, rgba(10,11,11,0.3) 56.49%, rgba(0,0,0,0.3) 70.14%)' }}
+          />
+        </div>
+
+        {/* Desktop Navbar */}
+        <nav className="relative z-50 flex items-center justify-between bg-white px-[80px] py-[32px] w-full">
+          <Image alt="Reportage Heights" src={LOGO} width={240} height={47} className="object-contain" priority />
+          <div className="flex items-center gap-[40px]">
+            <Link href="#vision" className="font-sans font-medium text-[14px] text-black tracking-[1.4px] uppercase">{t.vision}</Link>
+            <Link href="#experience" className="font-sans font-medium text-[14px] text-black tracking-[1.4px] uppercase">{t.virtualTour}</Link>
+            <Link href="#files" className="font-sans font-medium text-[14px] text-black tracking-[1.4px] uppercase">{t.downloads}</Link>
+            <div className="flex items-center gap-[10px] bg-[#e6b867] px-[24px] py-[12px] rounded-[4px]">
+              <img alt="" src={PHONE_ICON} className="size-[18px]" />
+              <span className="font-sans font-bold text-[14px] text-white">{t.phone}</span>
+            </div>
+            <LanguageDropdown
+              lang={lang}
+              currentLabel={t.lang}
+              variant="desktop"
+              langIcon={LANG_ICON}
+              chevronIcon={LANG_CHEVRON}
+            />
+          </div>
+        </nav>
+
+        {/* Desktop Hero Content */}
+        <div className="relative z-10 flex gap-[58px] items-end justify-center pb-[80px] px-[80px] min-h-[823px] bg-[rgba(39,39,39,0.46)]">
+          <div className="flex flex-col items-start w-[806px]">
+            <div className="flex flex-col gap-[16px] items-start justify-center max-w-[650px] w-[650px] py-[80px] pt-[120px]">
+              <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] flex items-center justify-center px-[16px] py-[10px] rounded-[8px]">
+                <span className="font-sans font-bold text-[16px] text-[#e6b867] tracking-[3.2px] uppercase">{h.tagline}</span>
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="font-serif text-white text-[88px] leading-[96px]">{h.titleLine1}</span>
+                <span className="font-serif text-white text-[88px] leading-[96px]">{h.titleLine2}</span>
+              </div>
+              <p className="font-sans font-normal text-[20px] text-white leading-[28px] max-w-[550px]">{h.subtitle}</p>
+              <div className="flex items-start gap-[48px] pt-[24px]">
+                <div className="flex flex-col gap-[4px]">
+                  <span className="font-serif text-[40px] text-[#e6b867] leading-[48px]">{h.units}</span>
+                  <span className="font-sans font-semibold text-[12px] text-[#f5efdf] tracking-[2.2px] uppercase">{h.unitsLabel}</span>
+                </div>
+                <div className="bg-[rgba(216,210,196,0.3)] w-px h-[50px]" />
+                <div className="flex flex-col gap-[4px]">
+                  <span className="font-serif text-[40px] text-[#e6b867] leading-[48px]">{h.sqm}</span>
+                  <span className="font-sans font-semibold text-[12px] text-[#f5efdf] tracking-[2.2px] uppercase">{h.sqmLabel}</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-[20px] items-center w-full">
+              {[{ label: h.brochure, icon: DOWNLOAD_ICON }, { label: h.floorPlans, icon: DOWNLOAD_ICON }].map((card) => (
+                <div key={card.label} className="flex gap-[32px] items-center p-[13px] bg-[rgba(66,82,99,0.7)] border border-[rgba(216,210,196,0.15)] rounded-[12px] w-[339px] cursor-pointer hover:bg-[rgba(66,82,99,0.9)] transition-colors">
+                  <div className="bg-[rgba(255,255,255,0.1)] rounded-[8px] size-[80px] flex items-center justify-center shrink-0">
+                    <Image alt="" src={FILE_ICON} width={40} height={40} />
+                  </div>
+                  <div className="flex flex-col gap-[12px]">
+                    <span className="font-serif text-white text-[24px] leading-[30px]">{card.label}</span>
+                    <div className="flex items-center gap-[8px]">
+                      <img alt="" src={card.icon} className="size-[16px]" />
+                      <span className="font-sans font-semibold text-[13px] text-[#e6b867] tracking-[1.3px] uppercase">{h.downloadPdf}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Contact form */}
+          <div className="backdrop-blur-[3px] bg-[rgba(66,82,99,0.88)] border border-[rgba(230,184,103,0.3)] flex flex-col gap-[32px] items-start p-[49px] rounded-[8px] shadow-[2px_2px_6.8px_0px_rgba(66,82,99,0.2)] w-[416px] self-end shrink-0">
+            <div className="flex flex-col gap-[8px] items-center w-full">
+              <h2 className="font-serif text-white text-[30px] leading-[40px] text-center">{f.title}</h2>
+              <p className="font-sans font-normal text-[14px] text-white leading-[22px] text-center">{f.subtitle}</p>
+            </div>
+            <div className="flex flex-col gap-[24px] w-full">
+              {[{ label: f.fullName }, { label: f.email }].map((field) => (
+                <div key={field.label} className="flex flex-col gap-[8px]">
+                  <span className="font-sans font-semibold text-[11px] text-[#e6b867] tracking-[1.1px] uppercase">{field.label}</span>
+                  <div className="border-b border-[rgba(216,210,196,0.24)] h-[32px]" />
+                </div>
+              ))}
+              <div className="flex flex-col gap-[8px]">
+                <span className="font-sans font-semibold text-[11px] text-[#e6b867] tracking-[1.1px] uppercase">{f.phone}</span>
+                <div className="flex items-center border-b border-[rgba(216,210,196,0.24)] h-[32px]">
+                  <span className="font-sans font-normal text-[14px] text-white">{f.countryCode}</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[16px] w-full">
+              <button className="bg-[#e6b867] flex items-center justify-center h-[58px] rounded-[4px] w-full hover:bg-[#d4a655] transition-colors">
+                <span className="font-sans font-bold text-[14px] text-white tracking-[2.1px] uppercase">{f.submit}</span>
+              </button>
+              <div className="flex items-center gap-[8px] justify-center">
+                <span className="font-sans font-normal text-[12px] text-[rgba(255,255,255,0.7)]">{f.privacyText}</span>
+                <span className="font-sans font-normal text-[11px] text-white underline cursor-pointer">{f.privacyLink}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

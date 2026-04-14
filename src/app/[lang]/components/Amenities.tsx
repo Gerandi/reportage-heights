@@ -1,0 +1,135 @@
+import Image from 'next/image'
+import type { Dictionary } from '../dictionaries'
+
+const IMG_1 = '/images/amenities-1.avif'
+const IMG_2 = '/images/amenities-2.avif'
+const MOBILE_IMG = '/images/mobile-amenities.avif'
+const ICON_POOL = 'https://www.figma.com/api/mcp/asset/fc18a2f7-a705-43a3-963d-4ad4d5902184'
+const ICON_FITNESS = 'https://www.figma.com/api/mcp/asset/56da9293-5995-471e-9484-aa2bda8812c2'
+const ICON_PARKING = 'https://www.figma.com/api/mcp/asset/af2dd015-3f7f-4aac-b9ca-9b523e3089ad'
+const ICON_RETAIL = 'https://www.figma.com/api/mcp/asset/f5d98dbc-6f31-4b94-9f85-da19e1c23577'
+const MOBILE_ICON_POOL = 'https://www.figma.com/api/mcp/asset/4236be11-0816-4307-9844-12d38ebbdc45'
+const MOBILE_ICON_FITNESS = 'https://www.figma.com/api/mcp/asset/c1ba739c-bf2d-4175-bf7f-4aecf1732e7a'
+const MOBILE_ICON_PARKING = 'https://www.figma.com/api/mcp/asset/17404566-1ae6-4253-9641-a9b7a73c539a'
+const MOBILE_ICON_RETAIL = 'https://www.figma.com/api/mcp/asset/f9b76882-1044-4955-9983-332315308743'
+
+export default function Amenities({ dict }: { dict: Dictionary }) {
+  const t = dict.amenities
+
+  const mobileItems = [
+    { icon: MOBILE_ICON_POOL, label: t.pools },
+    { icon: MOBILE_ICON_FITNESS, label: t.fitness },
+    { icon: MOBILE_ICON_PARKING, label: t.parking },
+    { icon: MOBILE_ICON_RETAIL, label: t.retail },
+  ]
+
+  const desktopItems = [
+    { icon: ICON_POOL, label: t.pools },
+    { icon: ICON_FITNESS, label: t.fitness },
+    { icon: ICON_PARKING, label: t.parking },
+    { icon: ICON_RETAIL, label: t.retail },
+  ]
+
+  return (
+    <section className="bg-white w-full" style={{ contentVisibility: 'auto' }}>
+      {/* ── MOBILE (< lg) ── */}
+      <div className="lg:hidden flex flex-col gap-[48px] px-[20px] py-[42px]">
+        {/* Header */}
+        <div className="flex flex-col gap-[24px] w-full">
+          <div className="backdrop-blur-[10px] bg-[rgba(230,184,103,0.1)] flex items-center justify-center px-[20px] py-[10px] rounded-[8px] self-start">
+            <span className="font-sans font-bold text-[12px] text-[#e6b867] tracking-[3.2px] uppercase">{t.badge}</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-serif text-[#425263] text-[40px] leading-[46px]">{t.titleLine1}</span>
+            <span className="font-serif text-[#425263] text-[40px] leading-[46px]">{t.titleLine2}</span>
+          </div>
+          <p className="font-sans font-normal text-[16px] text-[#475569] leading-[20px]">{t.descMobile}</p>
+        </div>
+
+        {/* 2x2 tile grid */}
+        <div className="flex flex-col gap-[12px] w-full">
+          <div className="flex gap-[12px]">
+            {mobileItems.slice(0, 2).map((item) => (
+              <div key={item.label} className="flex-1 flex flex-col gap-[20px] items-start p-[20px] bg-[#d8d2c4] rounded-[8px]">
+                <Image alt="" src={item.icon} width={32} height={32} />
+                <span className="font-serif text-[#425263] text-[16px] leading-[20px]">{item.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex gap-[12px]">
+            {mobileItems.slice(2, 4).map((item) => (
+              <div key={item.label} className="flex-1 flex flex-col gap-[20px] items-start p-[20px] bg-[#d8d2c4] rounded-[8px]">
+                <Image alt="" src={item.icon} width={32} height={32} />
+                <span className="font-serif text-[#425263] text-[16px] leading-[20px]">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Single image + dots */}
+        <div className="flex flex-col gap-[24px] items-center w-full">
+          <div className="relative h-[282px] w-full rounded-[8px] overflow-hidden">
+            <Image
+              alt=""
+              src={MOBILE_IMG}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw"
+            />
+          </div>
+          <div className="flex gap-[12px] items-center justify-center">
+            <div className="bg-[#425263] rounded-full size-[10px]" />
+            <div className="bg-[#dbdbdb] rounded-full size-[8px]" />
+            <div className="bg-[#dbdbdb] rounded-full size-[8px]" />
+          </div>
+        </div>
+      </div>
+
+      {/* ── DESKTOP (>= lg) ── */}
+      <div className="hidden lg:flex flex-col gap-[80px] items-start px-[80px] py-[140px]">
+        {/* Header */}
+        <div className="flex items-end justify-between w-full max-w-[1280px] mx-auto">
+          <div className="flex flex-col gap-[24px] items-start w-[633px]">
+            <div className="backdrop-blur-[10px] bg-[rgba(230,184,103,0.1)] flex items-center justify-center px-[20px] py-[10px] rounded-[8px]">
+              <span className="font-sans font-bold text-[16px] text-[#e6b867] tracking-[3.2px] uppercase">{t.badge}</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif text-[#425263] text-[64px] leading-[72px]">{t.titleLine1}</span>
+              <span className="font-serif text-[#425263] text-[64px] leading-[72px]">{t.titleLine2}</span>
+            </div>
+          </div>
+          <div className="border-l border-[rgba(66,82,99,0.2)] pl-[41px] w-[541px]">
+            <p className="font-sans font-normal text-[18px] text-[#475569] leading-[33px]">{t.desc}</p>
+          </div>
+        </div>
+
+        {/* Amenity tiles */}
+        <div className="flex gap-[40px] w-full max-w-[1280px] mx-auto">
+          {desktopItems.map((item) => (
+            <div key={item.label} className="flex flex-col gap-[24px] items-start p-[40px] bg-[#d8d2c4] rounded-[8px] w-[290px]">
+              <Image alt="" src={item.icon} width={32} height={32} />
+              <span className="font-serif text-[#425263] text-[20px] leading-[24px]">{item.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Gallery images */}
+        <div className="flex flex-col gap-[24px] w-full max-w-[1280px] mx-auto">
+          <div className="flex gap-[40px] h-[500px]">
+            <div className="flex-1 relative rounded-[8px] overflow-hidden">
+              <Image alt="" src={IMG_1} fill className="object-cover" sizes="(min-width: 1024px) 50vw" />
+            </div>
+            <div className="flex-1 relative rounded-[8px] overflow-hidden">
+              <Image alt="" src={IMG_2} fill className="object-cover" sizes="(min-width: 1024px) 50vw" />
+            </div>
+          </div>
+          <div className="flex gap-[12px] items-center justify-center">
+            <div className="bg-[#425263] rounded-full size-[10px]" />
+            <div className="bg-[#dbdbdb] rounded-full size-[8px]" />
+            <div className="bg-[#dbdbdb] rounded-full size-[8px]" />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
