@@ -39,8 +39,8 @@ export default function Footer({ dict, lang }: { dict: Dictionary; lang: string 
           <div className="flex flex-col gap-[12px]">
             <span className="font-sans font-bold text-[14px] text-white tracking-[1.4px] uppercase">{t.follow}</span>
             <div className="flex flex-col">
-              <a href="#" className="font-sans font-light text-[16px] text-white leading-[26px] hover:text-[#e6b867] transition-colors">{t.instagram}</a>
-              <a href="#" className="font-sans font-light text-[16px] text-white leading-[26px] hover:text-[#e6b867] transition-colors">{t.linkedin}</a>
+              <a href="https://www.instagram.com/reportageazerbaijan/" target="_blank" rel="noopener noreferrer" className="font-sans font-light text-[16px] text-white leading-[26px] hover:text-[#e6b867] transition-colors">{t.instagram}</a>
+              <a href="https://www.linkedin.com/company/reportageazerbaijan" target="_blank" rel="noopener noreferrer" className="font-sans font-light text-[16px] text-white leading-[26px] hover:text-[#e6b867] transition-colors">{t.linkedin}</a>
             </div>
           </div>
         </div>
@@ -77,8 +77,8 @@ export default function Footer({ dict, lang }: { dict: Dictionary; lang: string 
             <div className="flex flex-col gap-[24px]">
               <span className="font-sans font-bold text-[14px] text-white tracking-[1.4px] uppercase">{t.follow}</span>
               <div className="flex flex-col gap-[12px]">
-                <a href="#" className="font-sans font-normal text-[14px] text-[#d8d2c4] leading-[18px] hover:text-white transition-colors">{t.instagram}</a>
-                <a href="#" className="font-sans font-normal text-[14px] text-[#d8d2c4] leading-[18px] hover:text-white transition-colors">{t.linkedin}</a>
+                <a href="https://www.instagram.com/reportageazerbaijan/" target="_blank" rel="noopener noreferrer" className="font-sans font-normal text-[14px] text-[#d8d2c4] leading-[18px] hover:text-white transition-colors">{t.instagram}</a>
+                <a href="https://www.linkedin.com/company/reportageazerbaijan" target="_blank" rel="noopener noreferrer" className="font-sans font-normal text-[14px] text-[#d8d2c4] leading-[18px] hover:text-white transition-colors">{t.linkedin}</a>
               </div>
             </div>
           </div>
